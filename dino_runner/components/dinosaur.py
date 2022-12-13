@@ -1,6 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
-from dino_runner.utils.constants import RUNNING
+from dino_runner.utils.constants import RUNNING, JUMPING
 JUMPING_ACTION = "jumping"
 RUNNING_ACTION = "running"
 
@@ -22,7 +22,7 @@ class Dinosaur(Sprite):
             self.image = RUNNING[0] if self.step < 5 else RUNNING[1]
             self.step += 1
         elif self.action == JUMPING_ACTION:
-            self.image = JUMPING_ACTION
+            self.image = JUMPING
             self.rect.y -= self.jump_velocity * 4
             self.jump_velocity -= 0.8
 
